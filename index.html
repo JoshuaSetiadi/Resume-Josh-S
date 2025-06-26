@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Josh Setiadi</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="controls">
+        <button onclick="toggleLanguage()"><span id="gantibahasa">🌐 Ganti Bahasa</span></button>
+        <button onclick="toggleTheme()"><span id="gantitema">🌓 Change Theme</span></button>
+        <button onclick="window.print()"><span id="cetak">🖨️ Print PDF</span></button>
+    </div>
+
+    <header>
+        <div class="profile-container">
+            <img src="img/josh pic 2.png" alt="Foto Profil" class="profile-photo" />
+            <div>
+                <h1 class="animated-text"><span id="greeting">Hello,</span><span id="iam"> I am </span><span>Joshua Ray
+                        Setiadi</span></h1>
+                <p id="job-title">International Student | Double-Major</p>
+            </div>
+        </div>
+
+        <section class="resume-section">
+            <h2 id="personalgoals">🖋️ Personal Goals</h2>
+            <div class="entry">
+                <p id="katakata">Dedicated and reliable university student pursuing a double major in International Business and Cybersecurity at the University of Tampa. Known for a strong work ethic, adaptability, and excellent organizational skills. Eager to contribute to a professional environment, gain practical experience, and grow through meaningful responsibilities. Brings a positive attitude, strong communication skills, and a commitment to supporting team goals.</p>
+
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2 id="edu-title">📚 Education</h2>
+            <div class="entry">
+                <h3>Binus School Simprug</h3>
+                <span class="year">2012 - 2021</span>
+                <p>Jakarta, Indonesia</p>
+
+            </div>
+            <div class="entry">
+                <h3>Heritage Academy</h3>
+                <span class="year">2022 - 2023</span>
+                <p>Hilton Head Island, South Carolina, United States</p>
+
+            </div>
+            <div class="entry">
+                <h3>Erskine College</h3>
+                <span class="year">2023 - 2024</span>
+                <p>Due West, South Carolina, United States</p>
+
+            </div>
+            <div class="entry">
+                <h3>Universitas of Tampa</h3>
+                <span class="year">2025 - 2029 (Ongoing) </span>
+                <p id="degree">International Business & Cybersecurity</p>
+                <p>Tampa, Florida, United States</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2 id="exp-title">💼 Work Experience </h2>
+            <div class="entry">
+                <h3>PT Plasticpay</h3>
+                <span class="year">2022 - Sekarang</span>
+                <p id="job-desc">Front-End Developer, building user interfaces.</p>
+            </div>
+            <div class="entry">
+                <h3>Junior Players Golf Academy</h3>
+                <span class="year">June 2024 - August 2024</span>
+                <p id="job-desc">Coaching students of the summer camp golf program the fundamentals of
+                    the game of golf. Teaching the ins and outs of the game on and
+                    off the golf course </p>
+            </div>
+        </section>
+
+         <section class="resume-section">
+            <h2 id="lead">🫶 Leadership and Extracuricular Activities</h2>
+            <div class="entry">
+                <h3>CISV Indonesia</h3>
+                <span class="year">2016 - 2020</span>
+                <p id="job-desc">An International Organization dedicated to educating and inspiring people to promote peace through building intercultural friendship, cooperation, and understanding.</p>
+            </div>
+            <div class="entry">
+                <h3>Mitra Adiperkasa Retail Academy</h3>
+                <span class="year">September 2019 - October 2019</span>
+                <p id="job-desc">Positive Youth Development Program on Career Evolution</p>
+            </div>
+            <div class="entry">
+                <h3>Annual Nursing Home Visit for the Elderly</h3>
+                <span class="year">2018 - Now</span>
+                <p id="job-desc"></p>
+            </div>
+            <div class="entry">
+                <h3>Social Service for Children with Mental Illness</h3>
+                <span class="year">2018 - Now</span>
+                <p id="job-desc"></p>
+            </div>
+            <div class="entry">
+                <h3>Distributing food for the less fortunate</h3>
+                <span class="year">2018 - Now</span>
+                <p id="job-desc"></p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2> <span id="skills-title">🛠️ Skills</span></h2>
+            <ul class="skills">
+                <li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML & CSS</a></li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li><a href="https://www.instagram.com/joshua.r.setiadi_golf/" target="_blank">Golf</a></li>
+                <li>Microsoft PowerPoint</li>
+                <li>Microsoft Word</li>
+                <li>Microsoft Excel</li>
+                <li>Interpersonal Skills</li>
+            </ul>
+        </section>
+
+        <section class="resume-section">
+            <h2 id="contact-title">📞 Contact Information</h2>
+            <p>Phone: <br>IDN +62 815 1080 8008,<br>USA +1 843 301 9978</p>
+            <p>Email: joshua.r.setiadi@gmail.com</p>
+            <p><a
+                    href="https://www.linkedin.com/in/joshua-setiadi-61026b32b" target="_blank"><img src="img/linkedin-original.svg"
+                    style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> Joshua
+                    Setiadi</a></p>
+            <p><a
+                    href="https://www.instagram.com/joshua.r.setiadi/" target="_blank"><img src="img/instagram.svg" alt=""
+                    style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> joshua.r.setiadi</a></p>
+        </section>
+
+        <footer>
+            <p> ©️ 2025 Joshua Setiadi</p>
+        </footer>
+
+        <script>
+            let currentLang = "en";
+
+            const translations = {
+                id: {
+                    gantibahasa: "🌐 Change Language",
+                    gantitema: "🌓 Ganti Tema",
+                    cetak: "🖨️ Cetak PDF",
+                    greeting: "Halo,",
+                    iam: " Saya ",
+                    jobTitle: "International Student | Double-Major",
+                    personalgoals: "🖋️ Tujuan Pribadi",
+                    katakata: "Mahasiswa yang berdedikasi dan dapat diandalkan, saat ini menempuh pendidikan di University of Tampa dengan jurusan ganda di International Business dan Keamanan Siber. Dikenal memiliki etos kerja yang kuat, mudah beradaptasi, serta keterampilan organisasi yang baik. Antusias untuk berkontribusi dalam lingkungan kerja profesional, memperoleh pengalaman praktis, dan berkembang melalui tanggung jawab yang bermakna. Memiliki sikap positif, kemampuan komunikasi yang baik, dan komitmen tinggi terhadap pencapaian tujuan tim.",
+                    eduTitle: "📚 Pendidikan",
+                    degree: "Sarjana Bisnis Internasional dan Keamanan Siber",
+                    expTitle: "💼 Pengalaman Kerja",
+                    lead: "🫶 Kepemimpinan dan Kegiatan Ekstrakurikuler",
+                    jobDesc: "Front-End Developer, membangun dan merancang antarmuka responsif.",
+                    skillsTitle: "🛠️ Keahlian",
+                    contactTitle: "📞 Kontak"
+                },
+                en: {
+                    gantibahasa: "🌐 Ganti Bahasa",
+                    gantitema: "🌓 Change Theme",
+                    cetak: "🖨️ Print PDF",
+                    greeting: "Hello,",
+                    iam: " I'm ",
+                    jobTitle: "International Student | Double-Major",
+                    personalgoals: "🖋️ Personal Goals",
+                    katakata: "Dedicated and reliable university student pursuing a double major in International Business and Cybersecurity at the University of Tampa. Known for a strong work ethic, adaptability, and excellent organizational skills. Eager to contribute to a professional environment, gain practical experience, and grow through meaningful responsibilities. Brings a positive attitude, strong communication skills, and a commitment to supporting team goals.",
+                    eduTitle: "📚 Education",
+                    degree: "International Business & Cybersecurity",
+                    expTitle: "💼 Work Experience",
+                    lead: "🫶 Leadership and Extracurricular Activities",
+                    jobDesc: "Front-End Developer, building user interfaces.",
+                    skillsTitle: "🛠️ Skills",
+                    contactTitle: "📞 Contact Information"
+                }
+            };
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'en' ? 'id' : 'en';
+                const t = translations[currentLang];
+                document.getElementById("gantibahasa").textContent = t.gantibahasa;
+                document.getElementById("gantitema").textContent = t.gantitema;
+                document.getElementById("cetak").textContent = t.cetak;
+                document.getElementById("greeting").textContent = t.greeting;
+                document.getElementById("iam").textContent = t.iam;
+                document.getElementById("job-title").textContent = t.jobTitle;
+                document.getElementById("personalgoals").textContent = t.personalgoals;
+                document.getElementById("katakata").textContent = t.katakata;
+                document.getElementById("edu-title").textContent = t.eduTitle;
+                document.getElementById("degree").textContent = t.degree;
+                document.getElementById("exp-title").textContent = t.expTitle;
+                document.getElementById("lead").textContent = t.lead;
+                document.getElementById("job-desc").textContent = t.jobDesc;
+                document.getElementById("skills-title").textContent = t.skillsTitle;
+                document.getElementById("contact-title").textContent = t.contactTitle;
+            }
+
+            function toggleTheme() {
+                document.body.classList.toggle("light");
+            }
+        </script>
+    </header>
+</body>
+
+</html>

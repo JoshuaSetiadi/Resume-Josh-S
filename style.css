@@ -1,0 +1,279 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #222222, #000000);
+    color: #f2f2f2;
+    padding: 20px;
+    transition: background 0.5s, color 0.5s;
+}
+
+body.light {
+    background: #f0f0f0;
+    color: white;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    transition: background color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #1DCD9F;
+    color: black
+}
+
+header {
+    padding: 40px 20px;
+    background-color: #222222;
+    max-width: 900px;
+    margin: 40px auto;
+    border: #1DCD9F solid 1.5px;
+    border-radius: 25px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1DCD9F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.profle-photo:hover {
+    transform: scale(1.05);
+}
+
+.animated-text {
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #f2f2f2;
+    animation: typing 3.5s steps(30, end), blink .75s step-end infinite;
+}
+
+.animated-text span {
+    color: #1DCD9F;
+}
+
+.resume-section {
+    max-width: 900px;
+    margin: 40px auto 60px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid #1DCD9F;
+    border-radius: 10px;
+}
+
+.resume-section h2 {
+    margin-bottom: 10px;
+    color: #169976
+}
+
+body.light .resume-section p a {
+    color: black;
+    text-emphasis: none;
+}
+
+body .resume-section p a {
+    color: white;
+    text-emphasis: none;
+}
+
+.entry {
+    margin-bottom: 15px;
+}
+
+.skills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills li {
+    background-color: #169976;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.skills li a {
+    text-decoration: none;
+}
+
+body.light .skills li a {
+    color: black;
+}
+
+body .skills li a {
+    color: white;
+}
+
+.skills li:hover {
+    background-color: #1DCD9F;
+    color: #000;
+}
+
+.skills li a:hover {
+    background-color: #1DCD9F;
+    color: #000;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    margin-top: 40px;
+    background-color: #222222;
+    font-size: 0.9rem;
+}
+
+body.light .resume-section {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light header,
+body.light footer,
+body.light {
+    background-color: #eee;
+    color: black;
+}
+
+body.light .controls button {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Animations */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #f2f2f2;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .skills li a {
+        color: black !important;
+    }
+
+    .resume-section p a {
+        color: black !important;
+    }
+
+    header,
+    footer {
+        background: none !important;
+        color: black !important;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .resume-section {
+        border-left: none;
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+    }
+}
+
+/* RESPONSIVE LAYOUT */
+
+/* Tablet dan MOBILE */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .animated-text {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .resume-section {
+        padding: 15px;
+    }
+
+    .controls button {
+        margin: 5px;
+        padding: 8px 12px;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+}
+
+/* Mobile (HP) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .animated-text {
+        font-size: 1.2rem;
+    }
+
+    .skills li {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
