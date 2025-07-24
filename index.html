@@ -28,7 +28,11 @@
         <section class="resume-section">
             <h2 id="personalgoals">🖋️ Personal Goals</h2>
             <div class="entry">
-                <p id="katakata">Dedicated and reliable university student pursuing a double major in International Business and Cybersecurity at the University of Tampa. Known for a strong work ethic, adaptability, and excellent organizational skills. Eager to contribute to a professional environment, gain practical experience, and grow through meaningful responsibilities. Brings a positive attitude, strong communication skills, and a commitment to supporting team goals.</p>
+                <p id="katakata">Dedicated and reliable university student pursuing a double major in International
+                    Business and Cybersecurity at the University of Tampa. Known for a strong work ethic, adaptability,
+                    and excellent organizational skills. Eager to contribute to a professional environment, gain
+                    practical experience, and grow through meaningful responsibilities. Brings a positive attitude,
+                    strong communication skills, and a commitment to supporting team goals.</p>
 
             </div>
         </section>
@@ -82,12 +86,13 @@
             </div>
         </section>
 
-         <section class="resume-section">
+        <section class="resume-section">
             <h2 id="lead">🫶 Leadership and Extracuricular Activities</h2>
             <div class="entry">
                 <h3>CISV Indonesia</h3>
                 <span class="year">2016 - 2020</span>
-                <p id="job-desc">An International Organization dedicated to educating and inspiring people to promote peace through building intercultural friendship, cooperation, and understanding.</p>
+                <p id="job-desc">An International Organization dedicated to educating and inspiring people to promote
+                    peace through building intercultural friendship, cooperation, and understanding.</p>
             </div>
             <div class="entry">
                 <h3>Mitra Adiperkasa Retail Academy</h3>
@@ -111,7 +116,7 @@
             </div>
         </section>
 
-        <section class="resume-section">
+        <!-- <section class="resume-section">
             <h2> <span id="skills-title">🛠️ Skills</span></h2>
             <ul class="skills">
                 <li><a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">HTML & CSS</a></li>
@@ -123,19 +128,23 @@
                 <li>Microsoft Excel</li>
                 <li>Interpersonal Skills</li>
             </ul>
+        </section> -->
+
+        <section class="resume-sectionn">
+            <h2><span id="skills-title">🛠️ Skills &amp; Technologies</span></h2>
+            <div class="skills-list" id="skills-list"></div>
         </section>
 
         <section class="resume-section">
             <h2 id="contact-title">📞 Contact Information</h2>
             <p>Phone: <br>IDN +62 815 1080 8008,<br>USA +1 843 301 9978</p>
             <p>Email: joshua.r.setiadi@gmail.com</p>
-            <p><a
-                    href="https://www.linkedin.com/in/joshua-setiadi-61026b32b" target="_blank"><img src="img/linkedin-original.svg"
-                    style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> Joshua
+            <p><a href="https://www.linkedin.com/in/joshua-setiadi-61026b32b" target="_blank"><img
+                        src="img/linkedin-original.svg"
+                        style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> Joshua
                     Setiadi</a></p>
-            <p><a
-                    href="https://www.instagram.com/joshua.r.setiadi/" target="_blank"><img src="img/instagram.svg" alt=""
-                    style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> joshua.r.setiadi</a></p>
+            <p><a href="https://www.instagram.com/joshua.r.setiadi/" target="_blank"><img src="img/instagram.svg" alt=""
+                        style="height: 25px;width: 25px; margin-top: 5px; margin-right: 5px;"> joshua.r.setiadi</a></p>
         </section>
 
         <footer>
@@ -143,6 +152,64 @@
         </footer>
 
         <script>
+            const skillsData = [
+                { key: "javascript", en: "JavaScript", id: "JavaScript", level: 70 },
+                { key: "MicrosoftExcel", en: "Microsoft Excel", id: "Microsoft Excel", level: 85 },
+                { key: "html5", en: "HTML5", id: "HTML5", level: 95 },
+                { key: "MicroWord", en: "Microsoft Word", id: "Microsoft Word", level: 95 },
+                { key: "MicroPPT", en: "Microsoft PowerPoint", id: "Microsoft PowerPoint", level: 95 },
+                { key: "html5", en: "HTML5", id: "HTML5", level: 95 },
+                { key: "css3", en: "CSS3", id: "CSS3", level: 90 },
+                { key: "git", en: "Git", id: "Git", level: 85 },
+                { key: "responsive-design", en: "Responsive Design", id: "Desai Responsif", level: 95 },
+            ];
+
+            function buildSkills() {
+                const skillsList = document.getElementById("skills-list");
+                skillsList.innerHTML = "";
+                skillsData.forEach(skill => {
+                    const skillDiv = document.createElement("div");
+                    skillDiv.className = "skill";
+
+                    const labelContainer = document.createElement("div");
+                    labelContainer.className = "skill-label-container";
+
+                    const labelSpan = document.createElement("span");
+                    labelSpan.id = `skill-label-${skill.key}`;
+                    labelSpan.textContent = currentLang === 'en' ? skill.en : skill.id;
+
+                    const percentageSpan = document.createElement("span");
+                    percentageSpan.className = "skill-percentage";
+                    percentageSpan.textContent = skill.level + "%";
+
+                    labelContainer.appendChild(labelSpan);
+                    labelContainer.appendChild(percentageSpan);
+
+                    const barDiv = document.createElement("div");
+                    barDiv.className = "skill-bar";
+
+                    const progressDiv = document.createElement("div");
+                    progressDiv.className = "skill-progress";
+                    progressDiv.style.width = "0%";
+
+                    barDiv.appendChild(progressDiv);
+                    skillDiv.appendChild(labelContainer);
+                    skillDiv.appendChild(barDiv);
+                    skillsList.appendChild(skillDiv);
+                });
+            }
+
+            function animateSkills() {
+                const bars = document.querySelectorAll(".skill-progress");
+                bars.forEach((bar, i) => {
+                    const level = skillsData[i].level;
+                    setTimeout(() => {
+                        // bar.style.transition = "width 1.5s ease-in-out"; // REMOVE THIS LINE
+                        bar.style.width = level + "%";
+                    }, 100);
+                });
+            }
+
             let currentLang = "en";
 
             const translations = {
@@ -160,7 +227,7 @@
                     expTitle: "💼 Pengalaman Kerja",
                     lead: "🫶 Kepemimpinan dan Kegiatan Ekstrakurikuler",
                     jobDesc: "Front-End Developer, membangun dan merancang antarmuka responsif.",
-                    skillsTitle: "🛠️ Keahlian",
+                    skillsTitle: "🛠️ Keahlian dan Bakat",
                     contactTitle: "📞 Kontak"
                 },
                 en: {
@@ -177,7 +244,7 @@
                     expTitle: "💼 Work Experience",
                     lead: "🫶 Leadership and Extracurricular Activities",
                     jobDesc: "Front-End Developer, building user interfaces.",
-                    skillsTitle: "🛠️ Skills",
+                    skillsTitle: "🛠️ Skills and Abilities",
                     contactTitle: "📞 Contact Information"
                 }
             };
@@ -200,11 +267,31 @@
                 document.getElementById("job-desc").textContent = t.jobDesc;
                 document.getElementById("skills-title").textContent = t.skillsTitle;
                 document.getElementById("contact-title").textContent = t.contactTitle;
+
+                buildSkills();
+
+                setTimeout(() => {
+                    animateSkills();
+                }, 50);
+
+                //update skill labels
+                skillsData.forEach(skill => {
+                    const labelSpan = document.getElementById(`skill-label-${skill.key}`);
+                    if (labelSpan) {
+                        labelSpan.textContent = currentLang === "en" ? skill.en : skill.id;
+                    }
+                });
             }
 
             function toggleTheme() {
                 document.body.classList.toggle("light");
             }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                buildSkills();
+                animateSkills();
+            });
+
         </script>
     </header>
 </body>
